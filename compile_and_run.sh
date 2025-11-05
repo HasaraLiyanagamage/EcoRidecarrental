@@ -7,7 +7,7 @@ echo "║           EcoRide Car Rental System - Build Script            ║"
 echo "╚════════════════════════════════════════════════════════════════╝"
 echo ""
 
-echo "📦 Compiling Java files..."
+echo " Compiling Java files..."
 echo ""
 
 # Compile all Java files with proper classpath
@@ -15,7 +15,7 @@ javac -cp src src/EcoRideCarRentalSystem.java src/models/*.java src/services/*.j
 
 # Check if compilation was successful
 if [ $? -eq 0 ]; then
-    echo "✅ Compilation successful!"
+    echo " Compilation successful!"
     echo ""
     echo "Choose an option:"
     echo "1. Run Main Application"
@@ -27,13 +27,13 @@ if [ $? -eq 0 ]; then
     case $choice in
         1)
             echo ""
-            echo "🚀 Starting EcoRide Car Rental System..."
+            echo " Starting EcoRide Car Rental System..."
             echo ""
             java -cp src EcoRideCarRentalSystem
             ;;
         2)
             echo ""
-            echo "🧪 Running Test Suite..."
+            echo " Running Test Suite..."
             echo ""
             java -cp src tests.TestCases
             ;;
@@ -41,10 +41,10 @@ if [ $? -eq 0 ]; then
             echo "Exiting..."
             ;;
         *)
-            echo "❌ Invalid choice"
+            echo " Invalid choice"
             ;;
     esac
 else
-    echo "❌ Compilation failed! Please check for errors."
+    echo " Compilation failed! Please check for errors."
     exit 1
 fi

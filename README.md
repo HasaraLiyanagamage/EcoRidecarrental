@@ -13,12 +13,12 @@ EcoRide is a comprehensive car rental management system developed in Java using 
 - **Search Capabilities**: Search vehicles, customers, and bookings by various criteria
 
 ### Business Rules Implementation
-- ✅ Refundable deposit of LKR 5,000 charged upon booking
-- ✅ Minimum 3-day advance booking requirement
-- ✅ 2-day cancellation/update deadline from booking date
-- ✅ 10% discount for rentals of 7 or more days
-- ✅ Category-specific pricing, free kilometers, extra km charges, and tax rates
-- ✅ Automatic vehicle status management (Available/Reserved/Under Maintenance)
+-  Refundable deposit of LKR 5,000 charged upon booking
+-  Minimum 3-day advance booking requirement
+-  2-day cancellation/update deadline from booking date
+-  10% discount for rentals of 7 or more days
+-  Category-specific pricing, free kilometers, extra km charges, and tax rates
+-  Automatic vehicle status management (Available/Reserved/Under Maintenance)
 
 ## Vehicle Categories
 
@@ -252,18 +252,7 @@ Potential improvements for future versions:
 **Module**: CI6115 Programming III - Patterns and Algorithms  
 **Institution**: Kingston University, BSc (Hons)  
 **Assignment**: Coursework 1 - Car Rental System  
-
-## License
-
-This project is developed for academic purposes as part of the CI6115 module coursework.
-
-## Acknowledgments
-
-- Kingston University for the assignment specifications
-- Java documentation and best practices
-- Object-oriented design principles and patterns
-
----
+**Name**: Hasara Sesadi
 
 **Note**: This system demonstrates the application of OOP principles, design patterns, and software engineering best practices in developing a real-world business application.
 # EcoRidecarrental

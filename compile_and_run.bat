@@ -6,7 +6,7 @@ echo ║           EcoRide Car Rental System - Build Script            ║
 echo ╚════════════════════════════════════════════════════════════════╝
 echo.
 
-echo 📦 Compiling Java files...
+echo  Compiling Java files...
 echo.
 
 REM Compile all Java files with proper classpath
@@ -14,7 +14,7 @@ javac -cp src src\EcoRideCarRentalSystem.java src\models\*.java src\services\*.j
 
 REM Check if compilation was successful
 if %errorlevel% equ 0 (
-    echo ✅ Compilation successful!
+    echo  Compilation successful!
     echo.
     echo Choose an option:
     echo 1. Run Main Application
@@ -25,21 +25,21 @@ if %errorlevel% equ 0 (
     
     if "%choice%"=="1" (
         echo.
-        echo 🚀 Starting EcoRide Car Rental System...
+        echo  Starting EcoRide Car Rental System...
         echo.
         java -cp src EcoRideCarRentalSystem
     ) else if "%choice%"=="2" (
         echo.
-        echo 🧪 Running Test Suite...
+        echo  Running Test Suite...
         echo.
         java -cp src tests.TestCases
     ) else if "%choice%"=="3" (
         echo Exiting...
     ) else (
-        echo ❌ Invalid choice
+        echo  Invalid choice
     )
 ) else (
-    echo ❌ Compilation failed! Please check for errors.
+    echo  Compilation failed! Please check for errors.
     pause
     exit /b 1
 )
