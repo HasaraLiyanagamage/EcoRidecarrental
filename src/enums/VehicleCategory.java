@@ -1,7 +1,6 @@
 package enums;
-
 /**
- * Enum representing vehicle categories with their pricing details
+ * vehicle categories with their pricing details
  */
 public enum VehicleCategory {
     COMPACT_PETROL("Compact Petrol Car", 5000.0, 100, 50.0, 0.10),

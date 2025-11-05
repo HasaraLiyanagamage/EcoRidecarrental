@@ -78,10 +78,10 @@ public class TestCases {
             Vehicle vehicle = new Vehicle("TEST001", "Test Model", VehicleCategory.COMPACT_PETROL);
             vehicleService.addVehicle(vehicle);
             boolean exists = vehicleService.findVehicleById("TEST001").isPresent();
-            System.out.println(exists ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(exists ? " PASSED" : " FAILED");
             return exists;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -90,10 +90,10 @@ public class TestCases {
         try {
             System.out.println("\n[TEST 2] Update Vehicle");
             boolean updated = vehicleService.updateVehicle("V001", "Updated Model", VehicleCategory.HYBRID);
-            System.out.println(updated ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(updated ? " PASSED" : " FAILED");
             return updated;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -104,10 +104,10 @@ public class TestCases {
             Vehicle vehicle = new Vehicle("REMOVE001", "To Remove", VehicleCategory.COMPACT_PETROL);
             vehicleService.addVehicle(vehicle);
             boolean removed = vehicleService.removeVehicle("REMOVE001");
-            System.out.println(removed ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(removed ? " PASSED" : "FAILED");
             return removed;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println("FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -116,10 +116,10 @@ public class TestCases {
         try {
             System.out.println("\n[TEST 4] Update Vehicle Availability Status");
             boolean updated = vehicleService.updateAvailabilityStatus("V002", AvailabilityStatus.UNDER_MAINTENANCE);
-            System.out.println(updated ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(updated ? "PASSED" : " FAILED");
             return updated;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -128,10 +128,10 @@ public class TestCases {
         try {
             System.out.println("\n[TEST 5] Find Vehicle by ID");
             boolean found = vehicleService.findVehicleById("V001").isPresent();
-            System.out.println(found ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(found ? "PASSED" : "FAILED");
             return found;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -145,10 +145,10 @@ public class TestCases {
                 "123456789V", "Test Customer", "0771234567", "test@email.com"
             );
             boolean registered = customer != null && customer.getCustomerId() != null;
-            System.out.println(registered ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(registered ? "PASSED" : "FAILED");
             return registered;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -157,10 +157,10 @@ public class TestCases {
         try {
             System.out.println("\n[TEST 7] Find Customer by NIC/Passport");
             boolean found = customerService.findCustomerByNicOrPassport("123456789V").isPresent();
-            System.out.println(found ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(found ? " PASSED" : "FAILED");
             return found;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -175,10 +175,10 @@ public class TestCases {
                 "DUPLICATE123", "Duplicate Test 2", "0779999999", "dup2@email.com"
             );
             boolean sameCustomer = customer1.getCustomerId().equals(customer2.getCustomerId());
-            System.out.println(sameCustomer ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(sameCustomer ? " PASSED" : " FAILED");
             return sameCustomer;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println("FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -195,10 +195,10 @@ public class TestCases {
             LocalDate endDate = LocalDate.now().plusDays(10);
             Booking booking = bookingService.createBooking(customer, "V003", startDate, endDate, 500);
             boolean created = booking != null && booking.getBookingId() != null;
-            System.out.println(created ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(created ? " PASSED" : " FAILED");
             return created;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -214,14 +214,14 @@ public class TestCases {
             
             try {
                 bookingService.createBooking(customer, "V004", startDate, endDate, 300);
-                System.out.println("❌ FAILED: Should have thrown exception");
+                System.out.println(" FAILED: Should have thrown exception");
                 return false;
             } catch (Exception e) {
-                System.out.println("✅ PASSED: Correctly rejected booking");
+                System.out.println(" PASSED: Correctly rejected booking");
                 return true;
             }
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -239,14 +239,14 @@ public class TestCases {
             
             try {
                 bookingService.createBooking(customer, "V003", startDate, endDate, 300);
-                System.out.println("❌ FAILED: Should have thrown exception");
+                System.out.println(" FAILED: Should have thrown exception");
                 return false;
             } catch (Exception e) {
-                System.out.println("✅ PASSED: Correctly rejected unavailable vehicle");
+                System.out.println(" PASSED: Correctly rejected unavailable vehicle");
                 return true;
             }
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -262,10 +262,10 @@ public class TestCases {
             Booking booking = bookingService.createBooking(customer, "V005", startDate, endDate, 400);
             
             boolean cancelled = bookingService.cancelBooking(booking.getBookingId());
-            System.out.println(cancelled ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(cancelled ? " PASSED" : " FAILED");
             return cancelled;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -283,10 +283,10 @@ public class TestCases {
             LocalDate newStartDate = LocalDate.now().plusDays(7);
             LocalDate newEndDate = LocalDate.now().plusDays(12);
             boolean updated = bookingService.updateBooking(booking.getBookingId(), newStartDate, newEndDate, 500);
-            System.out.println(updated ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(updated ? "PASSED" : " FAILED");
             return updated;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -305,10 +305,10 @@ public class TestCases {
             
             Invoice invoice = invoiceService.generateInvoice(booking);
             boolean generated = invoice != null && invoice.getInvoiceId() != null;
-            System.out.println(generated ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(generated ? " PASSED" : " FAILED");
             return generated;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println("FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -326,10 +326,10 @@ public class TestCases {
             Invoice invoice = invoiceService.generateInvoice(booking);
             // Expected: 15000 * 5 = 75000 (base), no discount
             boolean correct = invoice.getDiscountAmount() == 0.0;
-            System.out.println(correct ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(correct ? " PASSED" : " FAILED");
             return correct;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -352,10 +352,10 @@ public class TestCases {
             Invoice invoice = invoiceService.generateInvoice(booking);
             // Expected: 5000 * 7 = 35000 (base), discount = 3500
             boolean correct = invoice.getDiscountAmount() > 0.0;
-            System.out.println(correct ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(correct ? " PASSED" : " FAILED");
             return correct;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -379,10 +379,10 @@ public class TestCases {
             Invoice invoice = invoiceService.generateInvoice(booking);
             // Expected extra km charges: 300 * 50 = 15000
             boolean correct = invoice.getExtraKmCharges() > 0.0;
-            System.out.println(correct ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(correct ? " PASSED" : " FAILED");
             return correct;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -394,10 +394,10 @@ public class TestCases {
             System.out.println("\n[TEST 18] Pricing for Compact Petrol");
             Vehicle vehicle = new Vehicle("PRICE1", "Price Test 1", VehicleCategory.COMPACT_PETROL);
             boolean correct = vehicle.getDailyRentalPrice() == 5000.0;
-            System.out.println(correct ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(correct ? " PASSED" : " FAILED");
             return correct;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println("FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -407,10 +407,10 @@ public class TestCases {
             System.out.println("\n[TEST 19] Pricing for Hybrid");
             Vehicle vehicle = new Vehicle("PRICE2", "Price Test 2", VehicleCategory.HYBRID);
             boolean correct = vehicle.getDailyRentalPrice() == 7500.0;
-            System.out.println(correct ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(correct ? " PASSED" : " FAILED");
             return correct;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -420,10 +420,10 @@ public class TestCases {
             System.out.println("\n[TEST 20] Pricing for Electric");
             Vehicle vehicle = new Vehicle("PRICE3", "Price Test 3", VehicleCategory.ELECTRIC);
             boolean correct = vehicle.getDailyRentalPrice() == 10000.0;
-            System.out.println(correct ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(correct ? "PASSED" : "FAILED");
             return correct;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }
@@ -433,10 +433,10 @@ public class TestCases {
             System.out.println("\n[TEST 21] Pricing for Luxury SUV");
             Vehicle vehicle = new Vehicle("PRICE4", "Price Test 4", VehicleCategory.LUXURY_SUV);
             boolean correct = vehicle.getDailyRentalPrice() == 15000.0;
-            System.out.println(correct ? "✅ PASSED" : "❌ FAILED");
+            System.out.println(correct ? " PASSED" : " FAILED");
             return correct;
         } catch (Exception e) {
-            System.out.println("❌ FAILED: " + e.getMessage());
+            System.out.println(" FAILED: " + e.getMessage());
             return false;
         }
     }

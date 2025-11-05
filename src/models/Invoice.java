@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Invoice class representing a rental invoice with detailed pricing breakdown
+Invoice class representing a rental invoice with detailed pricing breakdown
  */
 public class Invoice {
     private String invoiceId;

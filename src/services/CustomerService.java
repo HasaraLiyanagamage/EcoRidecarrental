@@ -4,7 +4,6 @@ import models.Customer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 /**
  * Service class for managing customer operations
  */
@@ -16,7 +15,6 @@ public class CustomerService {
         this.customers = new ArrayList<>();
         this.customerCounter = 1;
     }
-
     public Customer registerCustomer(String nicOrPassport, String name, 
                                     String contactNumber, String email) {
         // Check if customer already exists
@@ -46,11 +44,9 @@ public class CustomerService {
                 .filter(c -> c.getNicOrPassport().equalsIgnoreCase(nicOrPassport))
                 .findFirst();
     }
-
     public List<Customer> getAllCustomers() {
         return new ArrayList<>(customers);
     }
-
     public boolean updateCustomer(String customerId, String name, String contactNumber, String email) {
         Optional<Customer> customerOpt = findCustomerById(customerId);
         if (customerOpt.isPresent()) {

@@ -59,6 +59,7 @@ public class Vehicle {
     @Override
     public String toString() {
         return String.format("Car ID: %s | Model: %s | Category: %s | Price: LKR %.2f/day | Status: %s",
-                carId, model, category.getDisplayName(), getDailyRentalPrice(), availabilityStatus.getDisplayName());
+                carId, model, category.getDisplayName(), 
+            getDailyRentalPrice(), availabilityStatus.getDisplayName());
     }
 }
